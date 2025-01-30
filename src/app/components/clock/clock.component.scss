@@ -1,0 +1,22 @@
+:host {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clock {
+  font-family: "Source Code Pro", serif;
+  font-size: 20vw;
+  color: var(--color);
+  text-shadow: var(--color) 0 0 10vw;
+  display: 1;
+  transition:
+    text-shadow 5s,
+    color 5s,
+    opacity 5s;
+
+  @starting-style {
+    opacity: 0;
+  }
+}

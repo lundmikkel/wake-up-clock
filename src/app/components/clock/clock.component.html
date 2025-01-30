@@ -1,0 +1,3 @@
+<div class="clock" [style.--color]="color()">
+  {{ now$ | async | date: "HH.mm" }}
+</div>
