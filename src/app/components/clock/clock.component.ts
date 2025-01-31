@@ -14,4 +14,5 @@ export class ClockComponent {
 
   protected readonly now$ = inject(TimeService).now$;
   protected readonly color = computed(() => this.timeSlot().color);
+  protected readonly opacity = computed(() => (!this.timeSlot().dim ? 1 : 0.5));
 }

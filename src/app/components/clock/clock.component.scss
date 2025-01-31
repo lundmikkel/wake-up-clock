@@ -10,7 +10,7 @@
   font-size: 20vw;
   color: var(--color);
   text-shadow: var(--color) 0 0 10vw;
-  display: 1;
+  opacity: var(--opacity);
   transition:
     text-shadow 5s,
     color 5s,

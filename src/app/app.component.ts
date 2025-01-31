@@ -5,6 +5,7 @@ import { TimeSlot } from './time-slots';
 import { distinctUntilChanged, map, of, switchMap } from 'rxjs';
 import { TimeService } from './services/time.service';
 import { CommonModule } from '@angular/common';
+import { FullscreenService } from './services/fullscreen.service';
 
 @Component({
   selector: 'app-root',
@@ -14,11 +15,16 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
+  private readonly fullscreenService = inject(FullscreenService);
   private readonly timeSlots: TimeSlot[] = [
-    { color: 'red', hours: 7, minutes: 0, dim: true },
-    { color: 'yellow', hours: 7, minutes: 15, dim: true },
+    { color: 'red', hours: 6, minutes: 30, dim: true },
+    { color: 'yellow', hours: 7, minutes: 0 },
     { color: 'green', hours: 20, minutes: 0 },
   ];
+
+  protected onClick() {
+    this.fullscreenService.toggle();
+  }
 
   private readonly timeSlots$ = of(this.timeSlots);
 

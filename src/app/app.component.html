@@ -1,5 +1,5 @@
 <router-outlet />
 
 @if (activeTimeSlot$ | async; as timeSlot) {
-  <app-clock [timeSlot]="timeSlot" />
+  <app-clock [timeSlot]="timeSlot" (click)="onClick()" />
 }
